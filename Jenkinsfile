@@ -1,6 +1,6 @@
 node{
 	stage('SCM Checkout'){
-		git branch: 'wartomcat', url: 'https://github.com/prabhatpankaj/devopsprojects.git'
+		git branch: 'wartomcat', url: 'https://github.com/saurav-kc/devopsprojects.git'
 	}
 	stage('Compile-Package'){
 		def mvnHome = tool name: 'maven-3.5.4', type: 'maven'
@@ -8,7 +8,7 @@ node{
 	}
 	stage('Deploy to Tomcat'){
 		sshagent(['tomcatserver']) {
-		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.136.126.144:/opt/tomcat9/webapps/'
+		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@54.235.225.106:/opt/tomcat9/webapps/'
 	}
 	}
 }
