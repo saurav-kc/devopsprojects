@@ -11,6 +11,6 @@ node{
 		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@54.89.177.80:/opt/tomcat9/webapps/'
 	}
 	stage('Slack Notification'){
-                 slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkinsnotification', color: '#439F30', message: 'New build deploy test', teamDomain: 'intelycoreworkspace', tokenCredentialId: 'slack-secret'	
+                stage('Slack Notification'){ slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkinsnotification', color: '#439FE0', message: 'New Build deployed test', teamDomain: 'intelycoreworkspace', tokenCredentialId: 'slack-secret'	
 	}
 }
