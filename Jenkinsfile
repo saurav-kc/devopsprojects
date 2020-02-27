@@ -16,6 +16,6 @@ node{
 	}
 	
 	stage('Email Notification'){
-		mail bcc: '', body: 'Build done', cc: '', from: 'skc_metalz@yahoo.com', replyTo: '', subject: 'Build success by Saurav', to: 'skc_metalz@yahoo.com'
+		mail bcc: '', body: 'Build done', cc: '', from: 'skc_metalz@yahoo.com', replyTo: '', subject: 'Build success by Saurav', to: 'skcmetalz@gmail.com'
 	}
 }
