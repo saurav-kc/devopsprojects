@@ -10,6 +10,11 @@ node{
  
  stage('Build Docker Imager'){
    sh 'docker build -t saurav-kc/myweb:0.0.1 .'
- }
- 
+ }	
+ stage('Push to Docker Hub'){	
+	 withCredentials([string(credentialsId: 'dockerHubPwd', variable: 'dockerHubPwd')]) {	
+        sh "docker login -u sauravkc14 -p ${dockerHubPwd}"	
+     }	
+	 sh 'docker push saurav-kc/myweb:0.0.1'	
+ } 
 }
